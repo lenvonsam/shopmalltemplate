@@ -67,6 +67,10 @@ module.exports = {
         loader: 'pug'
       },
       {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'autoprefixer', 'sass']
+      },
+      {
         test: /\.json$/,
         loader: 'json-loader'
       },

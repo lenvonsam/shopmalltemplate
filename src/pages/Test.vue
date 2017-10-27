@@ -1,5 +1,10 @@
 <template lang="pug">
-  button(@click="test") 123
+  q-layout
+    q-toolbar(slot="header",view="hHr LpR lFf", color="red-5")
+      q-toolbar-title.text-center 测试
+    .layout-view
+      div(style="padding-top: 100px;")
+        button(@click="test") 123
 </template>
 
 <script>
@@ -17,5 +22,7 @@
 </script>
 
 <style scoped>
-
+  .auto {
+    flex: 1;
+  }
 </style>

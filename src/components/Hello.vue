@@ -51,10 +51,11 @@
       <router-view /> component
       if using subRoutes
     -->
-    <div class="layout-padding logo-container non-selectable no-pointer-events">
-      <div class="logo" :style="position">
-        <img src="~assets/quasar-logo-full.svg">
-      </div>
+    <div class="layout-padding logo-container">
+      <div><button class="primary" @click="jump({path: '/test'})">test页面</button></div>
+      <!-- <div class="logo" :style="position"> -->
+        <!-- <img src="~assets/quasar-logo-full.svg"> -->
+      <!-- </div> -->
     </div>
   </q-layout>
 </template>
