@@ -12,6 +12,10 @@ function pageLoad (pageName) {
   return () => import(`pages/${pageName}.vue`)
 }
 
+function layoutLoad (layoutName) {
+  return () => import(`layouts/${layoutName}.vue`)
+}
+
 export default new VueRouter({
   /*
    * NOTE! VueRouter "history" mode DOESN'T works for Cordova builds,
@@ -29,8 +33,30 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
-    { path: '/', component: load('Hello') },
+    {
+      path: '/',
+      component: layoutLoad('BasicLayout'),
+      redirect: '/tab'
+    },
     { path: '/test', component: pageLoad('Test') },
+    {
+      path: '/tab',
+      component: layoutLoad('TabarLayout'),
+      redirect: '/tab/main',
+      children: [{
+        path: 'main',
+        name: '首页',
+        component: pageLoad('Main')
+      }, {
+        path: 'cart',
+        name: '购物车',
+        component: pageLoad('Cart')
+      }, {
+        path: 'me',
+        name: '我的',
+        component: pageLoad('Me')
+      }]
+    },
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
   ]

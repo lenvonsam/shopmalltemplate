@@ -1,0 +1,40 @@
+@charset 'utf-8';
+@import 'variable';
+
+@each $key, $val in $edgemap {
+  @for $i from 0 through $count {
+    .#{$key}-#{$i * 5} {
+      #{$val}: $i * 5px !important;
+    }
+  }
+}
+
+.ptb {
+  padding: {
+    top: .5rem;
+    bottom: .5rem;
+  }
+}
+
+.padding {
+  padding: .5rem .5rem;
+}
+
+.pt-half-rem {
+  padding-top: .5rem;
+}
+
+.flex-30 {
+  flex: 0 0 30px;
+}
+.flex-80 {
+  flex: 0 0 80px;
+}
+
+.flex-100 {
+  flex: 0 0 100px;
+}
+
+.border-bottom-line {
+  border-bottom: 1px solid #ddd;
+}

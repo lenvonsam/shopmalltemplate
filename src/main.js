@@ -11,7 +11,7 @@ require(`quasar/dist/quasar.${__THEME}.css`)
 // require(`quasar/dist/quasar.ie.${__THEME}.css`)
 
 import Vue from 'vue'
-import Quasar, { QLayout, QToolbar, QToolbarTitle, QTabs, QRouteTab } from 'quasar'
+import Quasar, { QLayout, QToolbar, QToolbarTitle, QTabs, QRouteTab, QGalleryCarousel, QIcon, QCard, QCardTitle, QCardMedia, QCardActions, QBtn, QParallax, QChip, QModal } from 'quasar'
 import router from './router'
 import store from './vuex/store'
 import mixins from './mixins'
@@ -23,7 +23,17 @@ Vue.use(Quasar, {
     QToolbar,
     QToolbarTitle,
     QTabs,
-    QRouteTab
+    QRouteTab,
+    QGalleryCarousel,
+    QIcon,
+    QCard,
+    QCardMedia,
+    QCardTitle,
+    QCardActions,
+    QBtn,
+    QParallax,
+    QChip,
+    QModal
   }
 }) // Install Quasar Framework
 
